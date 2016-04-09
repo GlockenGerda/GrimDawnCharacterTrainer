@@ -17,7 +17,7 @@
 #include "UISettings.h"
 #include "TutorialPages.h"
 #include "PlayStats.h"
-class block;
+struct block;
 class GDCFile
 {
 private:

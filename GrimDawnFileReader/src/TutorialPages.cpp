@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TutorialPages.h"
 #include "GDCFile.h"
 #include "block.h"

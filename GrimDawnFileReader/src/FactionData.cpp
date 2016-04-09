@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "FactionData.h"
 #include "GDCFile.h"
 

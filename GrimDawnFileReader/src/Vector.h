@@ -1,7 +1,4 @@
 #pragma once
-#include "pch.h"
-#include "Vector.h"
-#include "GDCFile.h"
 #include <stdint.h>
 
 #include <vector>

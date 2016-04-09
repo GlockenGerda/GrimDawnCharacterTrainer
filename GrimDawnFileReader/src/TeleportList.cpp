@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "TeleportList.h"
 #include "block.h"
 #include "GDCFile.h"

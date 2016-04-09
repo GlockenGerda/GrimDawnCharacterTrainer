@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "WString.h"
 #include "GDCFile.h"
 #include <stdint.h>

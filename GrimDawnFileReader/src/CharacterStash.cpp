@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "CharacterStash.h"
 #include "GDCFile.h"
 #include "block.h"
