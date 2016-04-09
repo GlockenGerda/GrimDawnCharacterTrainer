@@ -2,7 +2,7 @@
 #include "Item.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void Item::read(GDCFile *gdc)
+	void Item::read(GDCFile ^gdc)
 	{
 		baseName.read(gdc);
 		prefixName.read(gdc);

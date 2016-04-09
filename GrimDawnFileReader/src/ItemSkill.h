@@ -2,9 +2,9 @@
 
 #include "String.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class ItemSkill
+	public ref class ItemSkill
 	{
 	public:
 
@@ -12,7 +12,7 @@ namespace GDFR {
 		String autoCastSkill;
 		String autoCastController;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

@@ -5,17 +5,17 @@
 #include "ItemSkill.h"
 
 namespace GDFR {
-	class GDCFile;
-	public class CharacterSkills
+	ref class GDCFile;
+	public ref class CharacterSkills
 	{
 	public:
-		Vector<Skill> skills;
-		Vector<ItemSkill> itemSkills;
+		Vector<Skill>^ skills;
+		Vector<ItemSkill>^ itemSkills;
 		uint32_t masteriesAllowed;
 		uint32_t skillReclamationPointsUsed;
 		uint32_t devotionReclamationPointsUsed;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

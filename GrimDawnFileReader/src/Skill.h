@@ -4,9 +4,9 @@
 
 #include <cstdint>
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class Skill
+	public ref class Skill
 	{
 	public:
 		String name;
@@ -20,7 +20,7 @@ namespace GDFR {
 		uint8_t unknown1;
 		uint8_t unknown2;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

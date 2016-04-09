@@ -2,11 +2,15 @@
 #include "block.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void CharacterInfo::read(GDCFile *gdc)
+	CharacterInfo::CharacterInfo()
 	{
-		block b;
+	}
 
-		if (gdc->read_block_start(&b) != 1)
+	void CharacterInfo::read(GDCFile^ gdc)
+	{
+		block^ b;
+
+		if (gdc->read_block_start(b) != 1)
 			throw e;
 
 		if (gdc->read_int() != 3) // version
@@ -24,14 +28,14 @@ namespace GDFR {
 		alternateConfigEnabled = gdc->read_byte();
 		texture.read(gdc);
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void CharacterInfo::write(GDCFile *gdc)
+	void CharacterInfo::write(GDCFile^ gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 1);
+		gdc->write_block_start(b, 1);
 		gdc->write_int(3); //version
 
 		gdc->write_byte(isInMainQuest);
@@ -46,6 +50,6 @@ namespace GDFR {
 		gdc->write_byte(alternateConfigEnabled);
 		texture.write(gdc);
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

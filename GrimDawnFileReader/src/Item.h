@@ -2,9 +2,9 @@
 #include "String.h"
 #include <cstdint>
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	class Item
+	public ref class Item
 	{
 	public:
 		String baseName;
@@ -22,7 +22,7 @@ namespace GDFR {
 		uint32_t augmentSeed;
 		uint32_t var1;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

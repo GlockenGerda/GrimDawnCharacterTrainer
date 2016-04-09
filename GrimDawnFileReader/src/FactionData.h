@@ -2,9 +2,9 @@
 
 #include <cstdint>
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class FactionData
+	public ref class FactionData
 	{
 	public:
 		float value;
@@ -13,7 +13,7 @@ namespace GDFR {
 		uint8_t modified;
 		uint8_t unlocked;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

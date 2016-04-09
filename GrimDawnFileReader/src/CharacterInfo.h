@@ -2,11 +2,14 @@
 #include <cstdint>
 #include "String.h"
 
-class GDCFile;
 namespace GDFR {
-	public class CharacterInfo
+	ref class GDCFile;
+
+	public ref class CharacterInfo
 	{
 	public:
+		CharacterInfo();
+	private:
 		String texture;
 		uint32_t money;
 		uint32_t lootMode;
@@ -18,8 +21,8 @@ namespace GDFR {
 		uint8_t skillWindowShowHelp;
 		uint8_t alternateConfig;
 		uint8_t alternateConfigEnabled;
-
-		void read(GDCFile *);
-		void write(GDCFile *);
+	public:
+		void read(GDCFile^);
+		void write(GDCFile^);
 	};
 }

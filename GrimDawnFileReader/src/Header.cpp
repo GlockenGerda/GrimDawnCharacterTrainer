@@ -2,7 +2,7 @@
 #include "Header.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void Header::read(GDCFile *gdc)
+	void Header::read(GDCFile^ gdc)
 	{
 		name.read(gdc);
 		sex = gdc->read_byte();
@@ -11,7 +11,7 @@ namespace GDFR {
 		hardcore = gdc->read_byte();
 	}
 
-	void Header::write(GDCFile *gdc)
+	void Header::write(GDCFile^ gdc)
 	{
 		name.write(gdc);
 		gdc->write_byte(sex);

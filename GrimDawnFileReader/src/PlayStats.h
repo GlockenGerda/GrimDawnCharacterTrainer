@@ -3,17 +3,17 @@
 #include <cstdint>
 
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class PlayStats
+	public ref class PlayStats
 	{
 	public:
-		String greatestMonsterKilledName[3];
-		String lastMonsterHit[3];
-		String lastMonsterHitBy[3];
-		float greatestMonsterKilledLevel[3];
-		float greatestMonsterKilledLifeAndMana[3];
-		uint32_t bossKills[3];
+		array<String^ >^ greatestMonsterKilledName = gcnew array<String^ >(3);
+		array<String^ >^ lastMonsterHit = gcnew array<String^ >(3);
+		array<String^ >^ lastMonsterHitBy = gcnew array<String^ >(3);
+		array<float> ^ greatestMonsterKilledLevel = gcnew array<float>(3);
+		array<float> ^ greatestMonsterKilledLifeAndMana = gcnew array<float>(3);
+		array<uint32_t>^ bossKills = gcnew array <uint32_t>(3);
 		uint32_t playTime;
 		uint32_t deaths;
 		uint32_t kills;
@@ -41,7 +41,7 @@ namespace GDFR {
 		uint32_t unknown1;
 		uint32_t unknown2;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

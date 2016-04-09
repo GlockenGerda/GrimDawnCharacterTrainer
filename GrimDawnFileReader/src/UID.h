@@ -2,14 +2,14 @@
 
 #include <cstdint>
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class UID
+	public ref class UID
 	{
 	public:
-		uint8_t id[16];
+		array<uint8_t>^ id = gcnew array<uint8_t>(16);
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

@@ -2,9 +2,9 @@
 #include "WString.h"
 #include "String.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class HotSlot
+	public ref class HotSlot
 	{
 	public:
 		String skill;
@@ -16,7 +16,7 @@ namespace GDFR {
 		uint32_t equipLocation;
 		uint8_t isItemSkill;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

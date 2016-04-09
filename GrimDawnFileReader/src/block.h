@@ -2,7 +2,7 @@
 #include <exception>
 
 namespace GDFR {
-	struct block
+	ref struct block
 	{
 		size_t len;
 		long end;

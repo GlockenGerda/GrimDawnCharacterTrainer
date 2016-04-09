@@ -2,11 +2,11 @@
 #include "GDCFile.h"
 #include "block.h"
 namespace GDFR {
-	void CharacterBio::read(GDCFile *gdc)
+	void CharacterBio::read(GDCFile^ gdc)
 	{
-		block b;
+		block^ b;
 
-		if (gdc->read_block_start(&b) != 2)
+		if (gdc->read_block_start(b) != 2)
 			throw e;
 
 		if (gdc->read_int() != 8) // version
@@ -24,14 +24,14 @@ namespace GDFR {
 		health = gdc->read_float();
 		energy = gdc->read_float();
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void CharacterBio::write(GDCFile *gdc)
+	void CharacterBio::write(GDCFile^ gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 2);
+		gdc->write_block_start(b, 2);
 		gdc->write_int(8); // version
 
 		gdc->write_int(level);
@@ -46,6 +46,6 @@ namespace GDFR {
 		gdc->write_float(health);
 		gdc->write_float(energy);
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

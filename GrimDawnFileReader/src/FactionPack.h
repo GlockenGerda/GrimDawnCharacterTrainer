@@ -3,15 +3,15 @@
 #include "FactionData.h"
 #include "Vector.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class FactionPack
+	public ref class FactionPack
 	{
 	public:
-		Vector<FactionData> factions;
+		Vector<FactionData>^ factions;
 		uint32_t faction;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

@@ -34,7 +34,6 @@
     <ClInclude Include="src\CharacterStash.h" />
     <ClInclude Include="src\FactionData.h" />
     <ClInclude Include="src\FactionPack.h" />
-    <ClInclude Include="src\File.h" />
     <ClInclude Include="src\GDCFile.h" />
     <ClInclude Include="src\Header.h" />
     <ClInclude Include="src\HotSlot.h" />
@@ -52,7 +51,7 @@
     <ClInclude Include="src\ShrineList.h" />
     <ClInclude Include="src\Skill.h" />
     <ClInclude Include="src\StashItem.h" />
-    <ClInclude Include="src\String.h" />
+    <ClInclude Include="src\GDString.h" />
     <ClInclude Include="src\targetver.h" />
     <ClInclude Include="src\TeleportList.h" />
     <ClInclude Include="src\TutorialPages.h" />
@@ -86,7 +85,7 @@
     <ClCompile Include="src\ShrineList.cpp" />
     <ClCompile Include="src\Skill.cpp" />
     <ClCompile Include="src\StashItem.cpp" />
-    <ClCompile Include="src\String.cpp" />
+    <ClCompile Include="src\GDString.cpp" />
     <ClCompile Include="src\TeleportList.cpp" />
     <ClCompile Include="src\TutorialPages.cpp" />
     <ClCompile Include="src\UID.cpp" />
@@ -257,8 +256,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <CompileAsManaged>true</CompileAsManaged>
+      <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

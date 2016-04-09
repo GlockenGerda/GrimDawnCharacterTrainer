@@ -8,11 +8,11 @@
 #include <cstdint>
 
 namespace GDFR {
-	void Inventory::read(GDCFile *gdc)
+	void Inventory::read(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		if (gdc->read_block_start(&b) != 3)
+		if (gdc->read_block_start(b) != 3)
 			throw e;
 
 		if (gdc->read_int() != 4) // version
@@ -28,39 +28,39 @@ namespace GDFR {
 
 			for (uint32_t i = 0; i < n; i++)
 			{
-				sacks.vector->at(i).read(gdc);
+				sacks.vector->at(i)->read(gdc);
 			}
 
 			useAlternate = gdc->read_byte();
 
 			for (unsigned i = 0; i < 12; i++)
 			{
-				equipment[i].read(gdc);
+				equipment[i]->read(gdc);
 			}
 
 			alternate1 = gdc->read_byte();
 
 			for (unsigned i = 0; i < 2; i++)
 			{
-				weapon1[i].read(gdc);
+				weapon1[i]->read(gdc);
 			}
 
 			alternate2 = gdc->read_byte();
 
 			for (unsigned i = 0; i < 2; i++)
 			{
-				weapon2[i].read(gdc);
+				weapon2[i]->read(gdc);
 			}
 		}
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void Inventory::write(GDCFile *gdc)
+	void Inventory::write(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 3);
+		gdc->write_block_start(b, 3);
 		gdc->write_int(4); // version
 
 		gdc->write_byte(flag);
@@ -74,31 +74,31 @@ namespace GDFR {
 
 			for (size_t i = 0; i < n; i++)
 			{
-				sacks.vector->at(i).write(gdc);
+				sacks.vector->at(i)->write(gdc);
 			}
 
 			gdc->write_byte(useAlternate);
 
 			for (unsigned i = 0; i < 12; i++)
 			{
-				equipment[i].write(gdc);
+				equipment[i]->write(gdc);
 			}
 
 			gdc->write_byte(alternate1);
 
 			for (unsigned i = 0; i < 2; i++)
 			{
-				weapon1[i].write(gdc);
+				weapon1[i]->write(gdc);
 			}
 
 			gdc->write_byte(alternate2);
 
 			for (unsigned i = 0; i < 2; i++)
 			{
-				weapon2[i].write(gdc);
+				weapon2[i]->write(gdc);
 			}
 		}
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

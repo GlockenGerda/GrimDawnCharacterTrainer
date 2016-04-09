@@ -3,11 +3,11 @@
 #include "block.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void ShrineList::read(GDCFile *gdc)
+	void ShrineList::read(GDCFile ^gdc)
 	{
 		block b;
 
-		if (gdc->read_block_start(&b) != 17)
+		if (gdc->read_block_start(b) != 17)
 			throw e;
 
 		if (gdc->read_int() != 2) // version
@@ -15,24 +15,24 @@ namespace GDFR {
 
 		for (unsigned i = 0; i < 6; i++)
 		{
-			uids[i].read(gdc);
+			uids[i]->read(gdc);
 		}
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void ShrineList::write(GDCFile *gdc)
+	void ShrineList::write(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 17);
+		gdc->write_block_start(b, 17);
 		gdc->write_int(2); // version
 
 		for (unsigned i = 0; i < 6; i++)
 		{
-			uids[i].write(gdc);
+			uids[i]->write(gdc);
 		}
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

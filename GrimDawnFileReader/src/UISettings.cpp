@@ -2,11 +2,11 @@
 #include "block.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void UISettings::read(GDCFile *gdc)
+	void UISettings::read(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		if (gdc->read_block_start(&b) != 14)
+		if (gdc->read_block_start(b) != 14)
 			throw e;
 
 		if (gdc->read_int() != 4) // version
@@ -18,26 +18,26 @@ namespace GDFR {
 
 		for (unsigned i = 0; i < 5; i++)
 		{
-			unknown4[i].read(gdc);
-			unknown5[i].read(gdc);
+			unknown4[i]->read(gdc);
+			unknown5[i]->read(gdc);
 			unknown6[i] = gdc->read_byte();
 		}
 
 		for (unsigned i = 0; i < 36; i++)
 		{
-			slots[i].read(gdc);
+			slots[i]->read(gdc);
 		}
 
 		cameraDistance = gdc->read_float();
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void UISettings::write(GDCFile *gdc)
+	void UISettings::write(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 14);
+		gdc->write_block_start(b, 14);
 		gdc->write_int(4); // version
 
 		gdc->write_byte(unknown1);
@@ -46,18 +46,18 @@ namespace GDFR {
 
 		for (unsigned i = 0; i < 5; i++)
 		{
-			unknown4[i].write(gdc);
-			unknown5[i].write(gdc);
-			gdc->write_byte(unknown6[i]);
+			unknown4[i]->write(gdc);
+			unknown5[i]->write(gdc);
+			gdc->write_byte(*unknown6[i]);
 		}
 
 		for (unsigned i = 0; i < 36; i++)
 		{
-			slots[i].write(gdc);
+			slots[i]->write(gdc);
 		}
 
 		gdc->write_float(cameraDistance);
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

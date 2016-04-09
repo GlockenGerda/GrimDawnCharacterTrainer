@@ -3,7 +3,7 @@
 #include "GDCFile.h"
 #include <stdint.h>
 namespace GDFR {
-	void UID::read(GDCFile *gdc)
+	void UID::read(GDCFile ^gdc)
 	{
 		for (unsigned i = 0; i < 16; i++)
 		{
@@ -11,7 +11,7 @@ namespace GDFR {
 		}
 	}
 
-	void UID::write(GDCFile *gdc)
+	void UID::write(GDCFile ^gdc)
 	{
 		for (unsigned i = 0; i < 16; i++)
 		{

@@ -2,15 +2,15 @@
 #include "Vector.h"
 #include "UID.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class RespawnList
+	public ref class RespawnList
 	{
 	public:
-		Vector<UID> uids[3];
-		UID spawn[3];
+		array<Vector<UID>^ >^ uids = gcnew array<Vector<UID>^ >(3);
+		array<UID^ >^ spawn = gcnew array<UID^ >(3);
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

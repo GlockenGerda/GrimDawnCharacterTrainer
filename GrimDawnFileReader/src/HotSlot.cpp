@@ -2,7 +2,7 @@
 #include "GDCFile.h"
 #include "HotSlot.h"
 namespace GDFR {
-	void HotSlot::read(GDCFile *gdc)
+	void HotSlot::read(GDCFile ^gdc)
 	{
 		type = gdc->read_int();
 
@@ -22,7 +22,7 @@ namespace GDFR {
 		}
 	}
 
-	void HotSlot::write(GDCFile *gdc)
+	void HotSlot::write(GDCFile ^gdc)
 	{
 		gdc->write_int(type);
 

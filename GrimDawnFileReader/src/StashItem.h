@@ -1,15 +1,15 @@
 #pragma once
 #include "Item.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class StashItem : public Item
+	public ref class StashItem : public Item
 	{
 	public:
 		float x;
 		float y;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

@@ -2,11 +2,11 @@
 #include "block.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void CharacterSkills::read(GDCFile *gdc)
+	void CharacterSkills::read(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		if (gdc->read_block_start(&b) != 8)
+		if (gdc->read_block_start(b) != 8)
 			throw e;
 
 		if (gdc->read_int() != 5) // version
@@ -18,14 +18,14 @@ namespace GDFR {
 		devotionReclamationPointsUsed = gdc->read_int();
 		itemSkills.read(gdc);
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void CharacterSkills::write(GDCFile *gdc)
+	void CharacterSkills::write(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 8);
+		gdc->write_block_start(b, 8);
 		gdc->write_int(5); // version
 
 		skills.write(gdc);
@@ -34,6 +34,6 @@ namespace GDFR {
 		gdc->write_int(devotionReclamationPointsUsed);
 		itemSkills.write(gdc);
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

@@ -1,6 +1,5 @@
 #pragma once
 #include <cstdint>
-#include "File.h"
 #include "UID.h"
 #include "CharacterInfo.h"
 #include "CharacterBio.h"
@@ -17,36 +16,42 @@
 #include "UISettings.h"
 #include "TutorialPages.h"
 #include "PlayStats.h"
-
+using namespace System;
+using namespace System::IO;
+using namespace System;
 namespace GDFR {
-	struct block;
-	public class GDCFile
+	ref struct block;
+	union { float f; int i; } u;
+
+	public ref class GDCFile
 	{
 	private:
-		FILE *fp;
+		FileStream^ fs;
+		BinaryWriter^ bw;
+		BinaryReader^ br;
 		uint32_t key;
-		uint32_t table[256];
+		array<uint32_t>^ table = gcnew array<uint32_t>(256);
 
 	public:
-		Header hdr;
-		UID id;
-		CharacterInfo info;
-		CharacterBio bio;
-		Inventory inv;
-		CharacterStash stash;
-		RespawnList respawns;
-		TeleportList teleports;
-		MarkerList markers;
-		ShrineList shrines;
-		CharacterSkills skills;
-		LoreNotes notes;
-		FactionPack factions;
-		UISettings ui;
-		TutorialPages tutorials;
-		PlayStats stats;
+		Header^ hdr;
+		UID^ id;
+		CharacterInfo^ info;
+		CharacterBio^ bio;
+		Inventory^ inv;
+		CharacterStash^ stash;
+		RespawnList^ respawns;
+		TeleportList^ teleports;
+		MarkerList^ markers;
+		ShrineList^ shrines;
+		CharacterSkills^ skills;
+		LoreNotes^ notes;
+		FactionPack^ factions;
+		UISettings^ ui;
+		TutorialPages^ tutorials;
+		PlayStats^ stats;
 
 		void read(const char *);
-		void write(const char *);
+		void write(String^);
 
 	private:
 		void read_key();
@@ -57,13 +62,13 @@ namespace GDFR {
 		uint16_t read_short();
 		uint8_t read_byte();
 		float read_float();
-		uint32_t read_block_start(block * b);
-		void read_block_end(block *b);
+		uint32_t read_block_start(block ^b);
+		void read_block_end(block ^b);
 		void write_int(uint32_t val);
 		void write_short(uint16_t val);
 		void write_byte(uint8_t val);
 		void write_float(float val);
-		void write_block_start(block *b, uint32_t n);
-		void write_block_end(block *b);
+		void write_block_start(block ^b, uint32_t n);
+		void write_block_end(block ^b);
 	};
 }

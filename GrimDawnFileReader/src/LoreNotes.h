@@ -3,14 +3,14 @@
 #include "Vector.h"
 #include "String.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class LoreNotes
+	public ref class LoreNotes
 	{
 	public:
-		Vector<String> names;
+		Vector<String>^ names;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

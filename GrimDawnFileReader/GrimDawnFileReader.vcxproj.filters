@@ -14,7 +14,6 @@
     <ClInclude Include="src\CharacterStash.h" />
     <ClInclude Include="src\FactionData.h" />
     <ClInclude Include="src\FactionPack.h" />
-    <ClInclude Include="src\File.h" />
     <ClInclude Include="src\GDCFile.h" />
     <ClInclude Include="src\Header.h" />
     <ClInclude Include="src\Inventory.h" />

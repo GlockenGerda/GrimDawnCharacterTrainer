@@ -3,14 +3,14 @@
 #include "GDCFile.h"
 
 namespace GDFR {
-	void ItemSkill::read(GDCFile *gdc)
+	void ItemSkill::read(GDCFile ^gdc)
 	{
 		name.read(gdc);
 		autoCastSkill.read(gdc);
 		autoCastController.read(gdc);
 	}
 
-	void ItemSkill::write(GDCFile *gdc)
+	void ItemSkill::write(GDCFile ^gdc)
 	{
 		name.write(gdc);
 		autoCastSkill.write(gdc);

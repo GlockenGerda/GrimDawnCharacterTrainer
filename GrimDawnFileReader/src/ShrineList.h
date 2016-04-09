@@ -3,14 +3,14 @@
 #include "Vector.h"
 #include "UID.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class ShrineList
+	public ref class ShrineList
 	{
 	public:
-		Vector<UID> uids[6];
+		array<Vector<UID>^ >^ uids = gcnew array<Vector<UID>^ >(6);
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

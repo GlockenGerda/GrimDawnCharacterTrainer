@@ -4,7 +4,7 @@
 #include <string>
 
 namespace GDFR {
-	void WString::read(GDCFile *gdc)
+	void WString::read(GDCFile^ gdc)
 	{
 		uint32_t len = gdc->read_int();
 
@@ -19,7 +19,7 @@ namespace GDFR {
 		}
 	}
 
-	void WString::write(GDCFile *gdc)
+	void WString::write(GDCFile^ gdc)
 	{
 		uint32_t len = string->size();
 		const wchar_t *str = string->data();

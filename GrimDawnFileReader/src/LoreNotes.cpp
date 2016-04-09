@@ -3,11 +3,11 @@
 #include "GDCFile.h"
 #include "block.h"
 namespace GDFR {
-	void LoreNotes::read(GDCFile *gdc)
+	void LoreNotes::read(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		if (gdc->read_block_start(&b) != 12)
+		if (gdc->read_block_start(b) != 12)
 			throw e;
 
 		if (gdc->read_int() != 1) // version
@@ -15,18 +15,18 @@ namespace GDFR {
 
 		names.read(gdc);
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void LoreNotes::write(GDCFile *gdc)
+	void LoreNotes::write(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 12);
+		gdc->write_block_start(b, 12);
 		gdc->write_int(1); // version
 
 		names.write(gdc);
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

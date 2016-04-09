@@ -1,7 +1,7 @@
 #include "FactionData.h"
 #include "GDCFile.h"
 namespace GDFR {
-	void FactionData::read(GDCFile *gdc)
+	void FactionData::read(GDCFile ^gdc)
 	{
 		modified = gdc->read_byte();
 		unlocked = gdc->read_byte();
@@ -10,7 +10,7 @@ namespace GDFR {
 		negativeBoost = gdc->read_float();
 	}
 
-	void FactionData::write(GDCFile *gdc)
+	void FactionData::write(GDCFile ^gdc)
 	{
 		gdc->write_byte(modified);
 		gdc->write_byte(unlocked);

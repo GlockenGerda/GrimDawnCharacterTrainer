@@ -2,14 +2,14 @@
 
 #include "Vector.h"
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class TutorialPages
+	public ref class TutorialPages
 	{
 	public:
-		Vector<size_t> pages;
+		Vector<size_t>^ pages;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile^);
+		void write(GDCFile^);
 	};
 }

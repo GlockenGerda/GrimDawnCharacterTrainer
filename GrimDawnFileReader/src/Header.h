@@ -1,8 +1,11 @@
 #pragma once
 #include "WString.h"
 #include "String.h"
+#include "GDCFile.h"
+
 namespace GDFR {
-	public class Header
+	ref class GDCFile;
+	public ref class Header
 	{
 	public:
 		WString name;
@@ -11,7 +14,7 @@ namespace GDFR {
 		uint8_t sex;
 		uint8_t hardcore;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile^);
+		void write(GDCFile^);
 	};
 }

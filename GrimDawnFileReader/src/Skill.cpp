@@ -3,7 +3,7 @@
 #include "GDCFile.h"
 
 namespace GDFR {
-	void Skill::read(GDCFile *gdc)
+	void Skill::read(GDCFile ^gdc)
 	{
 		name.read(gdc);
 		level = gdc->read_int();
@@ -17,7 +17,7 @@ namespace GDFR {
 		autoCastController.read(gdc);
 	}
 
-	void Skill::write(GDCFile *gdc)
+	void Skill::write(GDCFile ^gdc)
 	{
 		name.write(gdc);
 		gdc->write_int(level);

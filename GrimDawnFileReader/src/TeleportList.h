@@ -3,14 +3,14 @@
 #include "UID.h"
 
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class TeleportList
+	public ref class TeleportList
 	{
 	public:
-		Vector<UID> uids[3];
+		array<Vector<UID> ^>^ uids = gcnew array<Vector<UID> ^>(3);
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile ^);
+		void write(GDCFile ^);
 	};
 }

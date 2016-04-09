@@ -1,9 +1,9 @@
 #pragma once
 #include <cstdint>
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class CharacterBio
+	public ref class CharacterBio
 	{
 	public:
 		uint32_t level;
@@ -18,7 +18,7 @@ namespace GDFR {
 		float health;
 		float energy;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile^);
+		void write(GDCFile^);
 	};
 }

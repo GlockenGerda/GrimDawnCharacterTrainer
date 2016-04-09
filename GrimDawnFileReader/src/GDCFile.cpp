@@ -1,17 +1,17 @@
 #include "pch.h"
 #include "GDCFile.h"
-#include "File.h"
 #include "block.h"
-
+#using<system.dll>
 #include <stdio.h>
 #include <cstdint>
+
+using namespace System;
+using namespace System::IO;
+
 namespace GDFR {
 	void GDCFile::read_key()
 	{
-		uint32_t k;
-
-		if (fread(&k, 4, 1, fp) != 1)
-			throw e;
+		uint32_t k = br->ReadInt32();
 
 		k ^= 0x55555555;
 
@@ -27,10 +27,7 @@ namespace GDFR {
 
 	uint32_t GDCFile::next_int()
 	{
-		uint32_t ret;
-
-		if (fread(&ret, 4, 1, fp) != 1)
-			throw e;
+		uint32_t ret = br->ReadInt32();
 
 		ret ^= key;
 
@@ -49,10 +46,7 @@ namespace GDFR {
 
 	uint32_t GDCFile::read_int()
 	{
-		uint32_t val;
-
-		if (fread(&val, 4, 1, fp) != 1)
-			throw e;
+		uint32_t val = br->ReadInt32();
 
 		uint32_t ret = val ^ key;
 
@@ -63,10 +57,7 @@ namespace GDFR {
 
 	uint16_t  GDCFile::read_short()
 	{
-		uint16_t val;
-
-		if (fread(&val, 2, 1, fp) != 1)
-			throw e;
+		uint16_t val = br->ReadInt16();
 
 		uint16_t ret = val ^ key;
 
@@ -77,10 +68,7 @@ namespace GDFR {
 
 	uint8_t GDCFile::read_byte()
 	{
-		uint8_t val;
-
-		if (fread(&val, 1, 1, fp) != 1)
-			throw e;
+		uint16_t val = br->ReadByte();
 
 		uint8_t ret = val ^ key;
 
@@ -88,15 +76,13 @@ namespace GDFR {
 
 		return ret;
 	}
-
 	float GDCFile::read_float()
 	{
-		union { float f; int i; } u;
 		u.i = read_int();
 		return u.f;
 	}
 
-	uint32_t GDCFile::read_block_start(block *b)
+	uint32_t GDCFile::read_block_start(block ^b)
 	{
 		uint32_t ret = this->read_int();
 
@@ -106,7 +92,7 @@ namespace GDFR {
 		return ret;
 	}
 
-	void GDCFile::read_block_end(block *b)
+	void GDCFile::read_block_end(block ^b)
 	{
 		if (ftell(fp) != b->end)
 		{
@@ -119,36 +105,32 @@ namespace GDFR {
 
 	void GDCFile::write_int(uint32_t val)
 	{
-		if (fwrite(&val, 4, 1, fp) != 1)
-			throw e;
+		bw->Write(val);
 	}
 
 	void GDCFile::write_short(uint16_t val)
 	{
-		if (fwrite(&val, 2, 1, fp) != 1)
-			throw e;
+		bw->Write(val);
 	}
 
 	void GDCFile::write_byte(uint8_t val)
 	{
-		if (fwrite(&val, 1, 1, fp) != 1)
-			throw e;
+		bw->Write(val);
 	}
 
 	void GDCFile::write_float(float val)
 	{
-		if (fwrite(&val, 4, 1, fp) != 1)
-			throw e;
+		bw->Write(val);
 	}
 
-	void GDCFile::write_block_start(block *b, uint32_t n)
+	void GDCFile::write_block_start(block ^b, uint32_t n)
 	{
-		write_int(n);
-		write_int(0);
+		bw->Write(n);
+		bw->Write(0);
 		b->end = ftell(fp);
 	}
 
-	void GDCFile::write_block_end(block *b)
+	void GDCFile::write_block_end(block ^b)
 	{
 		long pos = ftell(fp);
 
@@ -163,20 +145,10 @@ namespace GDFR {
 		write_int(0);
 	}
 
-	void GDCFile::read(const char *filename)
+	void GDCFile::read(String^ filename)
 	{
-		File f(filename, "rb");
-
-		if (!(fp = f.fp))
-			throw e;
-
-		if (fseek(fp, 0, SEEK_END))
-			throw e;
-
-		long end = ftell(fp);
-
-		if (fseek(fp, 0, SEEK_SET))
-			throw e;
+		fs = gcnew FileStream(filename->s, FileMode::Open);
+		br = gcnew BinaryReader(fs);
 
 		read_key();
 
@@ -186,7 +158,7 @@ namespace GDFR {
 		if (read_int() != 1)
 			throw e;
 
-		hdr.read(this);
+		hdr->read(this);
 
 		if (next_int())
 			throw e;
@@ -194,59 +166,54 @@ namespace GDFR {
 		if (read_int() != 6) // version
 			throw e;
 
-		id.read(this);
+		id->read(this);
 
-		info.read(this);
-		bio.read(this);
-		inv.read(this);
-		stash.read(this);
-		respawns.read(this);
-		teleports.read(this);
-		markers.read(this);
-		shrines.read(this);
-		skills.read(this);
-		notes.read(this);
-		factions.read(this);
-		ui.read(this);
-		tutorials.read(this);
-		stats.read(this);
-
-		if (ftell(fp) != end)
-			throw e;
+		info->read(this);
+		bio->read(this);
+		inv->read(this);
+		stash->read(this);
+		respawns->read(this);
+		teleports->read(this);
+		markers->read(this);
+		shrines->read(this);
+		skills->read(this);
+		notes->read(this);
+		factions->read(this);
+		ui->read(this);
+		tutorials->read(this);
+		stats->read(this);
 	}
 
-	void GDCFile::write(const char *filename)
+	void GDCFile::write(String^ filename)
 	{
-		File f(filename, "wb");
-
-		if (!(fp = f.fp))
-			throw e;
+		fs = gcnew FileStream(filename, FileMode::Create);
+		bw = gcnew BinaryWriter(fs);
 
 		write_int(0x55555555);
 		write_int(0x58434447);
 		write_int(1);
 
-		hdr.write(this);
+		hdr->write(this);
 
 		write_int(0);
 
 		write_int(6); // version
-		id.write(this);
+		id->write(this);
 
-		info.write(this);
-		bio.write(this);
-		inv.write(this);
-		stash.write(this);
-		respawns.write(this);
-		teleports.write(this);
-		markers.write(this);
-		shrines.write(this);
-		skills.write(this);
-		notes.write(this);
-		factions.write(this);
-		ui.write(this);
-		tutorials.write(this);
-		stats.write(this);
+		info->write(this);
+		bio->write(this);
+		inv->write(this);
+		stash->write(this);
+		respawns->write(this);
+		teleports->write(this);
+		markers->write(this);
+		shrines->write(this);
+		skills->write(this);
+		notes->write(this);
+		factions->write(this);
+		ui->write(this);
+		tutorials->write(this);
+		stats->write(this);
 
 		if (fflush(fp))
 			throw e;

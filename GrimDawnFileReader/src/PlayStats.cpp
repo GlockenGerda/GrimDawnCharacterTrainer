@@ -3,11 +3,11 @@
 #include "GDCFile.h"
 #include "block.h"
 namespace GDFR {
-	void PlayStats::read(GDCFile *gdc)
+	void PlayStats::read(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		if (gdc->read_block_start(&b) != 16)
+		if (gdc->read_block_start(b) != 16)
 			throw e;
 
 		if (gdc->read_int() != 7) // version
@@ -28,11 +28,11 @@ namespace GDFR {
 
 		for (unsigned i = 0; i < 3; i++)
 		{
-			greatestMonsterKilledName[i].read(gdc);
+			greatestMonsterKilledName[i]->read(gdc);
 			greatestMonsterKilledLevel[i] = gdc->read_int();
 			greatestMonsterKilledLifeAndMana[i] = gdc->read_int();
-			lastMonsterHit[i].read(gdc);
-			lastMonsterHitBy[i].read(gdc);
+			lastMonsterHit[i]->read(gdc);
+			lastMonsterHitBy[i]->read(gdc);
 		}
 
 		championKills = gdc->read_int();
@@ -56,14 +56,14 @@ namespace GDFR {
 		unknown1 = gdc->read_int();
 		unknown2 = gdc->read_int();
 
-		gdc->read_block_end(&b);
+		gdc->read_block_end(b);
 	}
 
-	void PlayStats::write(GDCFile *gdc)
+	void PlayStats::write(GDCFile ^gdc)
 	{
-		block b;
+		block^ b;
 
-		gdc->write_block_start(&b, 16);
+		gdc->write_block_start(b, 16);
 		gdc->write_int(7); // version
 
 		gdc->write_int(playTime);
@@ -81,11 +81,11 @@ namespace GDFR {
 
 		for (unsigned i = 0; i < 3; i++)
 		{
-			greatestMonsterKilledName[i].write(gdc);
+			greatestMonsterKilledName[i]->write(gdc);
 			gdc->write_int(greatestMonsterKilledLevel[i]);
 			gdc->write_int(greatestMonsterKilledLifeAndMana[i]);
-			lastMonsterHit[i].write(gdc);
-			lastMonsterHitBy[i].write(gdc);
+			lastMonsterHit[i]->write(gdc);
+			lastMonsterHitBy[i]->write(gdc);
 		}
 
 		gdc->write_int(championKills);
@@ -109,6 +109,6 @@ namespace GDFR {
 		gdc->write_int(unknown1);
 		gdc->write_int(unknown2);
 
-		gdc->write_block_end(&b);
+		gdc->write_block_end(b);
 	}
 }

@@ -4,21 +4,21 @@
 #include "String.h"
 #include <cstdint>
 namespace GDFR {
-	class GDCFile;
+	ref class GDCFile;
 
-	public class UISettings
+	public ref class UISettings
 	{
 	public:
-		HotSlot slots[36];
-		String unknown4[5];
-		String unknown5[5];
+		array<HotSlot^ >^ slots = gcnew array<HotSlot^ >(36);
+		array<String^ >^ unknown4 = gcnew array<String^ >(5);
+		array<String^ >^ unknown5 = gcnew array<String^ >(5);
 		uint32_t unknown2;
 		float cameraDistance;
-		uint8_t unknown6[5];
+		array<uint8_t^ >^ unknown6 = gcnew array<uint8_t^ >(5);
 		uint8_t unknown1;
 		uint8_t unknown3;
 
-		void read(GDCFile *);
-		void write(GDCFile *);
+		void read(GDCFile^);
+		void write(GDCFile^);
 	};
 }
