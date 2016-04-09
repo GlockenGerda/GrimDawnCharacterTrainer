@@ -1,8 +1,6 @@
-#include "HotSlot.h"
-#include "String.h"
-#include "WString.h"
 #include "pch.h"
-#include <cstdint>
+#include "GDCFile.h"
+#include "HotSlot.h"
 
 void HotSlot::read(GDCFile *gdc)
 {

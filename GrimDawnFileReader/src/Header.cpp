@@ -1,9 +1,6 @@
+#include "pch.h"
 #include "Header.h"
 #include "GDCFile.h"
-#include "String.h"
-#include "WString.h"
-#include "pch.h"
-#include <cstdint>
 
 void Header::read(GDCFile *gdc)
 {

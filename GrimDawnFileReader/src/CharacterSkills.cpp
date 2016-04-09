@@ -1,12 +1,7 @@
 #include "pch.h"
 #include "CharacterSkills.h"
-#include "Vector.h"
-#include "Skill.h"
 #include "block.h"
 #include "GDCFile.h"
-#include "ItemSkill.h"
-
-#include <cstdint>
 
 void CharacterSkills::read(GDCFile *gdc)
 {

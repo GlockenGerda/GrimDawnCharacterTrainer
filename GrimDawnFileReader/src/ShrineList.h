@@ -1,5 +1,10 @@
 #pragma once
 
+#include "Vector.h"
+#include "UID.h"
+
+class GDCFile;
+
 class ShrineList
 {
 public:

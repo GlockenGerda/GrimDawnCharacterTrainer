@@ -1,5 +1,9 @@
 #pragma once
 
+#include <string>
+
+class GDCFile;
+
 class WString
 {
 private:

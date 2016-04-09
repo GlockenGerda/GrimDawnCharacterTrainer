@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "Skill.h"
-#include "String.h"
-
-#include <cstdint>
+#include "GDCFile.h"
 
 void Skill::read(GDCFile *gdc)
 {

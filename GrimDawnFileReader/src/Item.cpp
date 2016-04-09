@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "Item.h"
 #include "GDCFile.h"
-#include <cstdint>
-#include "String.h"
 
 void Item::read(GDCFile *gdc)
 {

@@ -1,9 +1,6 @@
 #include "pch.h"
 #include "StashItem.h"
 #include "GDCFile.h"
-#include "Item.h"
-
-#include <cstdint>
 
 void StashItem::read(GDCFile *gdc)
 {

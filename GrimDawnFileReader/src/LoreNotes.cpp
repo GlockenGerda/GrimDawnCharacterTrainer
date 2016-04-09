@@ -1,11 +1,7 @@
 #include "pch.h"
 #include "LoreNotes.h"
 #include "GDCFile.h"
-#include "Vector.h"
-#include "String.h"
 #include "block.h"
-
-#include <cstdint>
 
 void LoreNotes::read(GDCFile *gdc)
 {

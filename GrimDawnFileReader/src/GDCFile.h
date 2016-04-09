@@ -1,5 +1,23 @@
 #pragma once
-
+#include <cstdint>
+#include "File.h"
+#include "UID.h"
+#include "CharacterInfo.h"
+#include "CharacterBio.h"
+#include "Header.h"
+#include "Inventory.h"
+#include "CharacterStash.h"
+#include "RespawnList.h"
+#include "TeleportList.h"
+#include "MarkerList.h"
+#include "ShrineList.h"
+#include "CharacterSkills.h"
+#include "LoreNotes.h"
+#include "FactionPack.h"
+#include "UISettings.h"
+#include "TutorialPages.h"
+#include "PlayStats.h"
+struct  block;
 class GDCFile
 {
 private:

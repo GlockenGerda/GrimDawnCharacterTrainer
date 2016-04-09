@@ -1,10 +1,7 @@
 #include "pch.h"
 #include "MarkerList.h"
 #include "GDCFile.h"
-#include "Vector.h"
 #include "block.h"
-
-#include <cstdint>
 
 void MarkerList::read(GDCFile *gdc)
 {

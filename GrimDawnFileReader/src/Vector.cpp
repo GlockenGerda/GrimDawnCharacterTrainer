@@ -11,7 +11,8 @@ Vector<T>::Vector()
 }
 
 template<typename T>
-Vector<T>::~Vector{
+Vector<T>::~Vector()
+{
 	delete vector;
 }
 

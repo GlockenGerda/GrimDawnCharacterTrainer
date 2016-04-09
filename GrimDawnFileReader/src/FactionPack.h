@@ -1,4 +1,9 @@
 #pragma once
+#include <cstdint>
+#include "FactionData.h"
+#include "Vector.h"
+class GDCFile;
+
 class FactionPack
 {
 public:

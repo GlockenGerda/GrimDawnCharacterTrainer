@@ -1,5 +1,12 @@
 #pragma once
 
+#include "InventorySack.h"
+#include "Vector.h"
+#include "InventoryEquipment.h"
+#include <cstdint>
+
+class GDCFile;
+
 class Inventory
 {
 public:

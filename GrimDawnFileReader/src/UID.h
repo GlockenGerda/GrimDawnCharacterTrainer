@@ -1,4 +1,8 @@
 #pragma once
+
+#include <cstdint>
+class GDCFile;
+
 class UID
 {
 public:

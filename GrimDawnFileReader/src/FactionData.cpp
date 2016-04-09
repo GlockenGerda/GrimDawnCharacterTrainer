@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "FactionData.h"
 #include "GDCFile.h"
-#include <cstdint>
 
 void FactionData::read(GDCFile *gdc)
 {

@@ -1,6 +1,10 @@
 #pragma once
 
 #include "InventoryItem.h"
+#include "Vector.h"
+#include <cstdint>
+
+class GDCFile;
 
 class InventorySack
 {

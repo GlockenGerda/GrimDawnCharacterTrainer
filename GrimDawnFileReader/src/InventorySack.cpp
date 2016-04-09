@@ -1,11 +1,7 @@
 #include "pch.h"
 #include "InventorySack.h"
-#include "Vector.h"
-#include "Item.h"
 #include "GDCFile.h"
 #include "block.h"
-
-#include <cstdint>
 
 void InventorySack::read(GDCFile *gdc)
 {

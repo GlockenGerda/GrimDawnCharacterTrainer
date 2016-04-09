@@ -1,11 +1,7 @@
 #include "pch.h"
 #include "TeleportList.h"
-#include "UID.h"
-#include "Vector.h"
 #include "block.h"
 #include "GDCFile.h"
-
-#include <cstdint>
 
 void TeleportList::read(GDCFile *gdc)
 {

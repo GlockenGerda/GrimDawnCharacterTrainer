@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "WString.h"
 #include "GDCFile.h"
-#include "pch.h"
 #include <stdint.h>
 #include <string>
 

@@ -2,8 +2,6 @@
 #include "CharacterInfo.h"
 #include "block.h"
 #include "GDCFile.h"
-#include "String.h"
-#include <cstdint>
 
 void CharacterInfo::read(GDCFile *gdc)
 {

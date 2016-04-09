@@ -1,11 +1,7 @@
 #include "pch.h"
 #include "RespawnList.h"
-
 #include "GDCFile.h"
-#include "Vector.h"
-#include "UID.h"
 #include "block.h"
-#include <cstdint>
 
 void RespawnList::read(GDCFile *gdc)
 {

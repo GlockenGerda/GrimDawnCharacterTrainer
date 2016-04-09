@@ -1,4 +1,10 @@
 #pragma once
+#include <cstdint>
+#include "Vector.h"
+
+class GDCFile;
+class Skill;
+class ItemSkill;
 
 class CharacterSkills
 {

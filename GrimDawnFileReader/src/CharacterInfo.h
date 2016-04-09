@@ -1,4 +1,8 @@
 #pragma once
+#include <cstdint>
+#include "String.h"
+
+class GDCFile;
 
 class CharacterInfo
 {

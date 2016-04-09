@@ -1,5 +1,11 @@
 #pragma once
 
+#include "String.h"
+
+#include <cstdint>
+
+class GDCFile;
+
 class Skill
 {
 public:

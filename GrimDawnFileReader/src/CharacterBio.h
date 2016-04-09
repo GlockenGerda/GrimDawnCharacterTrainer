@@ -1,4 +1,7 @@
 #pragma once
+#include <cstdint>
+
+class GDCFile;
 
 class CharacterBio
 {

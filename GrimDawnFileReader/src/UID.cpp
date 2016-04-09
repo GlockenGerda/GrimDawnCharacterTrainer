@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "UID.h"
 #include "GDCFile.h"
-#include "pch.h"
 #include <stdint.h>
 
 void UID::read(GDCFile *gdc)

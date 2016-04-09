@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "String.h"
-
+#include "GDCFile.h"
 #include <cstdint>
 
 void String::read(GDCFile *gdc)

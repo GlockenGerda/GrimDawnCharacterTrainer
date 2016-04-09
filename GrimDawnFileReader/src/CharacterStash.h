@@ -1,5 +1,9 @@
 #pragma once
+#include <cstdint>
+#include "Vector.h"
+#include "StashItem.h"
 
+class GDCFile;
 class CharacterStash
 {
 public:

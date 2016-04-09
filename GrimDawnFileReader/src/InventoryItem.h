@@ -1,4 +1,7 @@
 #pragma once
+#include "Item.h"
+#include <cstdint>
+class GDCFile;
 
 class InventoryItem : public Item
 {

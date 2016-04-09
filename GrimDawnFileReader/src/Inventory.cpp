@@ -23,11 +23,11 @@ void Inventory::read(GDCFile *gdc)
 		focused = gdc->read_int();
 		selected = gdc->read_int();
 
-		sacks.resize(n);
+		sacks.vector->resize(n);
 
 		for (uint32_t i = 0; i < n; i++)
 		{
-			sacks[i].read(gdc);
+			sacks.vector->at(i).read(gdc);
 		}
 
 		useAlternate = gdc->read_byte();
@@ -66,14 +66,14 @@ void Inventory::write(GDCFile *gdc)
 
 	if (flag)
 	{
-		size_t n = sacks.size();
+		size_t n = sacks.vector->size();
 		gdc->write_int(n);
 		gdc->write_int(focused);
 		gdc->write_int(selected);
 
 		for (size_t i = 0; i < n; i++)
 		{
-			sacks[i].write(gdc);
+			sacks.vector->at(i).write(gdc);
 		}
 
 		gdc->write_byte(useAlternate);

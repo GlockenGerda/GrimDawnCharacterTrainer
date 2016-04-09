@@ -1,4 +1,10 @@
 #pragma once
+
+#include "HotSlot.h"
+#include "String.h"
+#include <cstdint>
+class GDCFile;
+
 class UISettings
 {
 public:

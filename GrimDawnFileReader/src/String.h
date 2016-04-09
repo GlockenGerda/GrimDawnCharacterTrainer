@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "GDCFile.h"
+class GDCFile;
 
 class String : public std::string
 {

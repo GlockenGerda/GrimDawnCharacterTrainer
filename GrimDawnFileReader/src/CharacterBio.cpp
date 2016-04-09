@@ -2,7 +2,6 @@
 #include "CharacterBio.h"
 #include "GDCFile.h"
 #include "block.h"
-#include <cstdint>
 
 void CharacterBio::read(GDCFile *gdc)
 {

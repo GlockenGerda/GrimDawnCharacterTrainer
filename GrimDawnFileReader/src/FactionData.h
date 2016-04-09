@@ -1,4 +1,9 @@
 #pragma once
+
+#include <cstdint>
+
+class GDCFile;
+
 class FactionData
 {
 public:

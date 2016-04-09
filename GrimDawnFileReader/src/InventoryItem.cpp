@@ -1,8 +1,6 @@
+#include "pch.h"
 #include "InventoryItem.h"
 #include "GDCFile.h"
-#include "Item.h"
-#include "pch.h"
-#include <cstdint>
 
 void InventoryItem::read(GDCFile *gdc)
 {

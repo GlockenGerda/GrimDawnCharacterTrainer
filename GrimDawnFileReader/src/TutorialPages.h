@@ -1,4 +1,9 @@
 #pragma once
+
+#include "Vector.h"
+
+class GDCFile;
+
 class TutorialPages
 {
 public:

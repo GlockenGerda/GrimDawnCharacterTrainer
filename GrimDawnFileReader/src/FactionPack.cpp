@@ -1,11 +1,7 @@
 #include "pch.h"
 #include "FactionPack.h"
 #include "GDCFile.h"
-#include "Vector.h"
-#include "FactionData.h"
-
 #include "block.h"
-#include <cstdint>
 
 void FactionPack::read(GDCFile *gdc)
 {

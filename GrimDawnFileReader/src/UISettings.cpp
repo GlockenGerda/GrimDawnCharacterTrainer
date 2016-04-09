@@ -1,10 +1,7 @@
+#include "pch.h"
 #include "UISettings.h"
 #include "block.h"
-#include "HotSlot.h"
-#include "String.h"
 #include "GDCFile.h"
-#include "pch.h"
-#include <stdint.h>
 
 void UISettings::read(GDCFile *gdc)
 {

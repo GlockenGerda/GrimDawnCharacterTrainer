@@ -1,4 +1,9 @@
 #pragma once
+#include "WString.h"
+#include "String.h"
+
+class GDCFile;
+
 class HotSlot
 {
 public:

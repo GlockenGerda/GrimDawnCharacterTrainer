@@ -1,10 +1,7 @@
 #include "pch.h"
 #include "CharacterStash.h"
 #include "GDCFile.h"
-#include "StashItem.h"
 #include "block.h"
-#include "Vector.h"
-#include <cstdint>
 
 void CharacterStash::read(GDCFile *gdc)
 {
