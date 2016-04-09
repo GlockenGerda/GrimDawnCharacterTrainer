@@ -2,14 +2,16 @@
 #include <cstdint>
 #include "FactionData.h"
 #include "Vector.h"
-class GDCFile;
+namespace GDFR {
+	class GDCFile;
 
-class FactionPack
-{
-public:
-	Vector<FactionData> factions;
-	uint32_t faction;
+	public class FactionPack
+	{
+	public:
+		Vector<FactionData> factions;
+		uint32_t faction;
 
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

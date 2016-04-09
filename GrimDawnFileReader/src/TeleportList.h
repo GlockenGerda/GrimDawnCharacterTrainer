@@ -2,13 +2,15 @@
 #include "Vector.h"
 #include "UID.h"
 
-class GDCFile;
+namespace GDFR {
+	class GDCFile;
 
-class TeleportList
-{
-public:
-	Vector<UID> uids[3];
+	public class TeleportList
+	{
+	public:
+		Vector<UID> uids[3];
 
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

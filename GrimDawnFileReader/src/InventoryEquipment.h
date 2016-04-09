@@ -2,13 +2,15 @@
 
 #include "Item.h"
 #include <cstdint>
-class GDCFile;
+namespace GDFR {
+	class GDCFile;
 
-class InventoryEquipment : public Item
-{
-public:
-	uint8_t attached;
+	public class InventoryEquipment : public Item
+	{
+	public:
+		uint8_t attached;
 
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

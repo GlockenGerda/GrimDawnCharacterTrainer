@@ -3,15 +3,16 @@
 #include "InventoryItem.h"
 #include "Vector.h"
 #include <cstdint>
+namespace GDFR {
+	class GDCFile;
 
-class GDCFile;
+	public class InventorySack
+	{
+	public:
+		Vector<InventoryItem> items;
+		uint8_t tempBool;
 
-class InventorySack
-{
-public:
-	Vector<InventoryItem> items;
-	uint8_t tempBool;
-
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

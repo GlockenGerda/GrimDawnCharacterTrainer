@@ -1,16 +1,18 @@
 #pragma once
 
 #include "String.h"
-class GDCFile;
+namespace GDFR {
+	class GDCFile;
 
-class ItemSkill
-{
-public:
+	public class ItemSkill
+	{
+	public:
 
-	String name;
-	String autoCastSkill;
-	String autoCastController;
+		String name;
+		String autoCastSkill;
+		String autoCastController;
 
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

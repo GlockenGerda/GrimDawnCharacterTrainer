@@ -1,14 +1,15 @@
 #pragma once
 
 #include <string>
+namespace GDFR {
+	class GDCFile;
 
-class GDCFile;
-
-class WString
-{
-private:
-	std::wstring *string;
-public:
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+	public class WString
+	{
+	private:
+		std::wstring *string;
+	public:
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

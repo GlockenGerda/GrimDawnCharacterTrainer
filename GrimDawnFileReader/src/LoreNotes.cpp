@@ -2,30 +2,31 @@
 #include "LoreNotes.h"
 #include "GDCFile.h"
 #include "block.h"
+namespace GDFR {
+	void LoreNotes::read(GDCFile *gdc)
+	{
+		block b;
 
-void LoreNotes::read(GDCFile *gdc)
-{
-	block b;
+		if (gdc->read_block_start(&b) != 12)
+			throw e;
 
-	if (gdc->read_block_start(&b) != 12)
-		throw e;
+		if (gdc->read_int() != 1) // version
+			throw e;
 
-	if (gdc->read_int() != 1) // version
-		throw e;
+		names.read(gdc);
 
-	names.read(gdc);
+		gdc->read_block_end(&b);
+	}
 
-	gdc->read_block_end(&b);
-}
+	void LoreNotes::write(GDCFile *gdc)
+	{
+		block b;
 
-void LoreNotes::write(GDCFile *gdc)
-{
-	block b;
+		gdc->write_block_start(&b, 12);
+		gdc->write_int(1); // version
 
-	gdc->write_block_start(&b, 12);
-	gdc->write_int(1); // version
+		names.write(gdc);
 
-	names.write(gdc);
-
-	gdc->write_block_end(&b);
+		gdc->write_block_end(&b);
+	}
 }

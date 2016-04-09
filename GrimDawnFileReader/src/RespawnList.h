@@ -1,15 +1,16 @@
 #pragma once
 #include "Vector.h"
 #include "UID.h"
+namespace GDFR {
+	class GDCFile;
 
-class GDCFile;
+	public class RespawnList
+	{
+	public:
+		Vector<UID> uids[3];
+		UID spawn[3];
 
-class RespawnList
-{
-public:
-	Vector<UID> uids[3];
-	UID spawn[3];
-
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

@@ -1,13 +1,15 @@
 #pragma once
 
 #include <cstdint>
-class GDCFile;
+namespace GDFR {
+	class GDCFile;
 
-class UID
-{
-public:
-	uint8_t id[16];
+	public class UID
+	{
+	public:
+		uint8_t id[16];
 
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}

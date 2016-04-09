@@ -2,13 +2,15 @@
 
 #include "Vector.h"
 #include "String.h"
-class GDCFile;
+namespace GDFR {
+	class GDCFile;
 
-class LoreNotes
-{
-public:
-	Vector<String> names;
+	public class LoreNotes
+	{
+	public:
+		Vector<String> names;
 
-	void read(GDCFile *);
-	void write(GDCFile *);
-};
+		void read(GDCFile *);
+		void write(GDCFile *);
+	};
+}
