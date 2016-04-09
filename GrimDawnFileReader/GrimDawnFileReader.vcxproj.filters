@@ -70,7 +70,6 @@
     <ClCompile Include="src\TutorialPages.cpp" />
     <ClCompile Include="src\UID.cpp" />
     <ClCompile Include="src\UISettings.cpp" />
-    <ClCompile Include="src\Vector.cpp" />
     <ClCompile Include="src\WString.cpp" />
     <ClCompile Include="src\HotSlot.cpp" />
   </ItemGroup>

@@ -91,7 +91,6 @@
     <ClCompile Include="src\TutorialPages.cpp" />
     <ClCompile Include="src\UID.cpp" />
     <ClCompile Include="src\UISettings.cpp" />
-    <ClCompile Include="src\Vector.cpp" />
     <ClCompile Include="src\WString.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -196,7 +195,6 @@
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
