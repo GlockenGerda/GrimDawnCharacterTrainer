@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\block.h" />
+    <ClInclude Include="src\CharacterBio.h" />
+    <ClInclude Include="src\CharacterInfo.h" />
+    <ClInclude Include="src\CharacterSkills.h" />
+    <ClInclude Include="src\CharacterStash.h" />
+    <ClInclude Include="src\FactionData.h" />
+    <ClInclude Include="src\FactionPack.h" />
+    <ClInclude Include="src\File.h" />
+    <ClInclude Include="src\GDCFile.h" />
+    <ClInclude Include="src\Header.h" />
+    <ClInclude Include="src\Inventory.h" />
+    <ClInclude Include="src\InventoryEquipment.h" />
+    <ClInclude Include="src\InventoryItem.h" />
+    <ClInclude Include="src\InventorySack.h" />
+    <ClInclude Include="src\Item.h" />
+    <ClInclude Include="src\ItemSkill.h" />
+    <ClInclude Include="src\LoreNotes.h" />
+    <ClInclude Include="src\MarkerList.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\PlayStats.h" />
+    <ClInclude Include="src\RespawnList.h" />
+    <ClInclude Include="src\ShrineList.h" />
+    <ClInclude Include="src\Skill.h" />
+    <ClInclude Include="src\StashItem.h" />
+    <ClInclude Include="src\String.h" />
+    <ClInclude Include="src\targetver.h" />
+    <ClInclude Include="src\TeleportList.h" />
+    <ClInclude Include="src\TutorialPages.h" />
+    <ClInclude Include="src\UID.h" />
+    <ClInclude Include="src\UISettings.h" />
+    <ClInclude Include="src\Vector.h" />
+    <ClInclude Include="src\WString.h" />
+    <ClInclude Include="src\HotSlot.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CharacterBio.cpp" />
+    <ClCompile Include="src\CharacterInfo.cpp" />
+    <ClCompile Include="src\CharacterSkills.cpp" />
+    <ClCompile Include="src\CharacterStash.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\FactionData.cpp" />
+    <ClCompile Include="src\FactionPack.cpp" />
+    <ClCompile Include="src\GDCFile.cpp" />
+    <ClCompile Include="src\Header.cpp" />
+    <ClCompile Include="src\Inventory.cpp" />
+    <ClCompile Include="src\InventoryEquipment.cpp" />
+    <ClCompile Include="src\InventoryItem.cpp" />
+    <ClCompile Include="src\InventorySack.cpp" />
+    <ClCompile Include="src\Item.cpp" />
+    <ClCompile Include="src\ItemSkill.cpp" />
+    <ClCompile Include="src\LoreNotes.cpp" />
+    <ClCompile Include="src\MarkerList.cpp" />
+    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\PlayStats.cpp" />
+    <ClCompile Include="src\RespawnList.cpp" />
+    <ClCompile Include="src\ShrineList.cpp" />
+    <ClCompile Include="src\Skill.cpp" />
+    <ClCompile Include="src\StashItem.cpp" />
+    <ClCompile Include="src\String.cpp" />
+    <ClCompile Include="src\TeleportList.cpp" />
+    <ClCompile Include="src\TutorialPages.cpp" />
+    <ClCompile Include="src\UID.cpp" />
+    <ClCompile Include="src\UISettings.cpp" />
+    <ClCompile Include="src\Vector.cpp" />
+    <ClCompile Include="src\WString.cpp" />
+    <ClCompile Include="src\HotSlot.cpp" />
+  </ItemGroup>
+</Project>
